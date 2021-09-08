@@ -213,6 +213,110 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get Events - findByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eventmanagement-api/events/search/findByName?name=Spring Data Rest Training",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eventmanagement-api",
+						"events",
+						"search",
+						"findByName"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Spring Data Rest Training"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Events - findByNameAndZoneId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eventmanagement-api/events/search/findByNameAndZoneId?name=Spring Data Rest Training E1&zoneId=US/Eastern",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eventmanagement-api",
+						"events",
+						"search",
+						"findByNameAndZoneId"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Spring Data Rest Training E1"
+						},
+						{
+							"key": "zoneId",
+							"value": "US/Eastern"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start an Event by Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eventmanagement-api/events/start/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eventmanagement-api",
+						"events",
+						"start",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check In a participant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eventmanagement-api/events/checkin/45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eventmanagement-api",
+						"events",
+						"checkin",
+						"45"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
