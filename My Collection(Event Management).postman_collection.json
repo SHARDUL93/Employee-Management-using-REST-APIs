@@ -317,6 +317,167 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get All Events(projection=partial)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eventmanagement-api/events?projection=partial",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eventmanagement-api",
+						"events"
+					],
+					"query": [
+						{
+							"key": "projection",
+							"value": "partial"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Venues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eventmanagement-api/venues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eventmanagement-api",
+						"venues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Venues(projection=virtual)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eventmanagement-api/venues?projection=virtual",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eventmanagement-api",
+						"venues"
+					],
+					"query": [
+						{
+							"key": "projection",
+							"value": "virtual"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Event with Venue(Auth-admin)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\" : \"Spring Data Rest Training Auth\",\r\n  \"description\": \"The Best Course Ever\",\r\n  \"startTime\" : \"2017-08-29T14:46:18Z\",\r\n  \"endTime\" : \"2017-08-29T16:46:18Z\",\r\n  \"zoneId\" : \"US/Central\",\r\n  \"organizer\" : \"/organizers/1\",\r\n  \"venue\" : {\r\n    \"name\" : \"Bisht Consulting and Training INC\",\r\n    \"streetAddress\" : \"12345\",\r\n    \"streetAddress2\" : \"Spice Wood Springs\",\r\n    \"city\" : \"Austin\",\r\n    \"state\" : \"Texas\",\r\n    \"country\" : \"United States\",\r\n    \"postalCode\" : \"78750\"\r\n  }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/eventmanagement-api/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eventmanagement-api",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an Event(Auth=admin)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_embedded\": {\r\n        \"events\": [\r\n            {\r\n                \"created\": \"2021-09-05T07:26:54Z\",\r\n                \"name\": \"Java Web Services Training\",\r\n                \"description\": \"The Best Course Ever\",\r\n                \"startTime\": \"2017-08-29T20:16:18+05:30\",\r\n                \"endTime\": \"2017-08-29T22:16:18+05:30\",\r\n                \"zoneId\": \"US/Central\",\r\n                \"started\": null,\r\n                \"venue\": {\r\n                    \"created\": \"2021-09-05T07:26:54Z\",\r\n                    \"name\": \"Oracle INC\",\r\n                    \"streetAddress\": \"12345\",\r\n                    \"streetAddress2\": \"Spice Wood Springs\",\r\n                    \"city\": \"Austin\",\r\n                    \"state\": \"Texas\",\r\n                    \"country\": \"United States\",\r\n                    \"postalCode\": \"78750\",\r\n                    \"resourceId\": 3\r\n                },\r\n                \"resourceId\": 2,\r\n                \"_links\": {\r\n                    \"self\": {\r\n                        \"href\": \"http://localhost:8080/eventmanagement-api/events/2\"\r\n                    },\r\n                    \"event\": {\r\n                        \"href\": \"http://localhost:8080/eventmanagement-api/events/2\"\r\n                    },\r\n                    \"organizer\": {\r\n                        \"href\": \"http://localhost:8080/eventmanagement-api/events/2/organizer\"\r\n                    },\r\n                    \"participants\": {\r\n                        \"href\": \"http://localhost:8080/eventmanagement-api/events/2/participants\"\r\n                    }\r\n                }\r\n            }\r\n        ]\r\n    },\r\n    \"_links\": {\r\n        \"self\": {\r\n            \"href\": \"http://localhost:8080/eventmanagement-api/events\"\r\n        },\r\n        \"profile\": {\r\n            \"href\": \"http://localhost:8080/eventmanagement-api/profile/events\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/eventmanagement-api/events/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eventmanagement-api",
+						"events",
+						"9"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
